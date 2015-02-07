@@ -8,7 +8,8 @@ Tests for every exercise can be found under the `test` folder separated in their
 own folder. The implementation of every solution can be found under the `bin`
 folder, at the same level of the corresponding test.
 
-To run all tests, execute the command: `dart test/all_tests.dart`. To run a
+To run all tests, first you must install dependencies by executing `pub get`
+command, then execute the command: `dart test/all_tests.dart`. To run a
 specific test, execute: `dart test/<exercise>/<exercise>.dart`.
 
 ## Exercises
