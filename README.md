@@ -15,9 +15,9 @@ specific test, execute: `dart test/<exercise>/<exercise>.dart`.
 ## Exercises
 
 - Palindrome numbers:
-[exercise]()
-[solution]()
-- Foo bar
+[exercise](http://www.solveet.com/exercises/Numero-capicua-con-recursividad-en-cualquier-lenguaje/357),
+[tests](bin/palindrome-numbers) and
+[solution](test/palindrome-numbers)
 
 ## 
 
