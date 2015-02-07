@@ -18,6 +18,9 @@ specific test, execute: `dart test/<exercise>/<exercise>.dart`.
 [exercise](http://www.solveet.com/exercises/Numero-capicua-con-recursividad-en-cualquier-lenguaje/357),
 [tests](test/palindrome-numbers) and
 [solution](bin/palindrome-numbers)
+- Football t-shirts:
+[exercise](http://www.solveet.com/exercises/Camisetas-de-futbol-con-recursividad-en-cualquier-lenguaje/356),
+[solution](test/football-tshirts)
 
 ## 
 
