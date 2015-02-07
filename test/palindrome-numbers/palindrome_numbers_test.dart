@@ -1,5 +1,5 @@
 import 'package:unittest/unittest.dart';
-import '../bin/palindrome_numbers.dart';
+import '../../bin/palindrome-numbers/palindrome_numbers.dart';
 
 void main() {
 
