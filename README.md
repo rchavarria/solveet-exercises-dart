@@ -1,5 +1,7 @@
 # solveet-exercises-dart
 
+[![Build Status](https://travis-ci.org/rchavarria/solveet-exercises-dart.svg?branch=master)](https://travis-ci.org/rchavarria/solveet-exercises-dart)
+
 A set of solutions to [Solveet] exercises writen in the Dart programming language.
 
 ## Project structure
