@@ -4,15 +4,21 @@
 
 A set of solutions to [Solveet] exercises writen in the Dart programming language.
 
+## Requirements
+
+- [Dart SDK](https://www.dartlang.org): needs to be installed
+
 ## Project structure
 
 Tests for every exercise can be found under the `test` folder separated in their
 own folder. The implementation of every solution can be found under the `bin`
 folder, at the same level of the corresponding test.
 
-To run all tests, first you must install dependencies by executing `pub get`
-command, then execute the command: `dart test/all_tests.dart`. To run a
-specific test, execute: `dart test/<exercise>/<exercise>.dart`.
+All tests can be run with [Dart Test Runner](https://pub.dartlang.org/packages/test_runner)
+tool. Just install it, and run it from the root of this project.
+
+    $ pub global activate test_runner
+    $ pub global run test_runner
 
 ## Exercises
 
