@@ -10,8 +10,6 @@ class Palindrome {
 
     boolean isPalindrome(int n) => n.toString() == reverse(n).toString();
 
-    boolean isSumPalindrome() => isPalindrome(number + reverse(number));
-
     boolean sumIsPalindromeRecursively() {
         currentIteration += 1;
         if (currentIteration > maxIterations) {

@@ -34,7 +34,7 @@ void main() {
             });
 
             test('sum is a palindrome number', () {
-                expect(new Palindrome(102, 1).isSumPalindrome(), isTrue);
+                expect(new Palindrome(102, 1).sumIsPalindromeRecursively(), isTrue);
             });
 
             test('sum is a palindrome number in the recursive solution', () {
