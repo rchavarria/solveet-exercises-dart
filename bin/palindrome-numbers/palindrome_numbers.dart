@@ -6,10 +6,6 @@ class Palindrome {
 
     Palindrome(this.number, this.maxIterations);
 
-    int reverse(int n) => int.parse(n.toString().split('').reversed.join());
-
-    boolean isPalindrome(int n) => n.toString() == reverse(n).toString();
-
     boolean sumIsPalindromeRecursively() {
         currentIteration += 1;
         if (currentIteration > maxIterations) {
@@ -23,6 +19,10 @@ class Palindrome {
 
         return sumIsPalindromeRecursively();
     }
+
+    int reverse(int n) => int.parse(n.toString().split('').reversed.join());
+
+    boolean isPalindrome(int n) => n.toString() == reverse(n).toString();
 
 }
 
