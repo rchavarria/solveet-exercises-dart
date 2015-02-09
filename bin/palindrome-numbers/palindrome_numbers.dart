@@ -4,7 +4,7 @@ class Palindrome {
     int maxIterations;
     int currentIteration = 0;
 
-    Palindrome(this.number, {this.maxIterations: 1});
+    Palindrome(this.number, this.maxIterations);
 
     int reverse(int n) => int.parse(n.toString().split('').reversed.join());
 
