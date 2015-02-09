@@ -41,6 +41,16 @@ void main() {
                 expect(new Palindrome(48, 2).sumIsPalindromeRecursively(), isTrue);
             });
 
+
+        });
+
+        group('Specific examples', () {
+
+            test('187 needs more than 22 iterations to find the palindrome', () {
+                expect(new Palindrome(187, 22).sumIsPalindromeRecursively(), isFalse);
+                expect(new Palindrome(187, 23).sumIsPalindromeRecursively(), isTrue);
+            });
+
         });
 
     });
