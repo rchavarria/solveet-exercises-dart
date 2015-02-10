@@ -26,3 +26,11 @@ class Palindrome {
 
 }
 
+// ejemplos
+void main() {
+    print('102 cumple la condicion? ${new Palindrome(102, 1).sumIsPalindrome()}');
+    print('48 cumple la condicion en una iteracion? ${new Palindrome(48, 1).sumIsPalindrome()}');
+    print('48 cumple la condicion en dos iteraciones? ${new Palindrome(48, 2).sumIsPalindrome()}');
+    print('187 cumple la condicion en 25 iteraciones? ${new Palindrome(187, 25).sumIsPalindrome()}');
+}
+
