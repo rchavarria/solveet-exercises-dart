@@ -30,15 +30,15 @@ void main() {
         group('PalindromeSum', () {
 
             test('sum is not a palindrome number in the first iteration', () {
-                expect(new Palindrome(48, 1).sumIsPalindromeRecursively(), isFalse);
+                expect(new Palindrome(48, 1).sumIsPalindrome(), isFalse);
             });
 
             test('sum is a palindrome number', () {
-                expect(new Palindrome(102, 1).sumIsPalindromeRecursively(), isTrue);
+                expect(new Palindrome(102, 1).sumIsPalindrome(), isTrue);
             });
 
             test('sum is a palindrome number in the recursive solution', () {
-                expect(new Palindrome(48, 2).sumIsPalindromeRecursively(), isTrue);
+                expect(new Palindrome(48, 2).sumIsPalindrome(), isTrue);
             });
 
 
@@ -47,8 +47,8 @@ void main() {
         group('Specific examples', () {
 
             test('187 needs more than 22 iterations to find the palindrome', () {
-                expect(new Palindrome(187, 22).sumIsPalindromeRecursively(), isFalse);
-                expect(new Palindrome(187, 23).sumIsPalindromeRecursively(), isTrue);
+                expect(new Palindrome(187, 22).sumIsPalindrome(), isFalse);
+                expect(new Palindrome(187, 23).sumIsPalindrome(), isTrue);
             });
 
         });

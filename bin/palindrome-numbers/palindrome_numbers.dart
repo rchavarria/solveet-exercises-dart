@@ -6,7 +6,7 @@ class Palindrome {
 
     Palindrome(this.number, this.maxIterations);
 
-    boolean sumIsPalindromeRecursively() {
+    boolean sumIsPalindrome() {
         currentIteration += 1;
         if (currentIteration > maxIterations) {
             return false;
@@ -17,7 +17,7 @@ class Palindrome {
             return true;
         }
 
-        return sumIsPalindromeRecursively();
+        return sumIsPalindrome();
     }
 
     int reverse(int n) => int.parse(n.toString().split('').reversed.join());
