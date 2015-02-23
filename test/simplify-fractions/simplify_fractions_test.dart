@@ -5,23 +5,23 @@ void main() {
     group('Greatest Common Divisor', () {
 
         test('is 1', () {
-            expect(1, equals(gcd(2, 1)));
-            expect(1, equals(gcd(1, 2)));
+            expectGCD(2, 1, 1);
+            expectGCD(1, 2, 1);
         });
 
         test('is the numerator or denominator because they are multiples', () {
-            expect(2, equals(gcd(4, 2)));
-            expect(2, equals(gcd(2, 4)));
+            expectGCD(4, 2, 2);
+            expectGCD(2, 4, 2);
         });
 
         test('is 1 because numerator and denominator are primes', () {
-            expect(1, equals(gcd(3, 11)));
-            expect(1, equals(gcd(11, 3)));
+            expectGCD(3, 11, 1);
+            expectGCD(11, 3, 1);
         });
 
         test('is a combination of common factors between numerator and denominator', () {
-            expect(6, equals(gcd(12, 42)));
-            expect(6, equals(gcd(42, 12)));
+            expectGCD(12, 42, 6);
+            expectGCD(42, 12, 6);
         });
 
     });
@@ -40,7 +40,10 @@ void main() {
 
 }
 
-int gcd(n, d) => new Fraction(n, d).gcd();
+void expectGCD(n, d, expected) {
+    int gcd = new Fraction(n, d).gcd();
+    expect(expected, equals(gcd));
+}
 
 class Fraction {
     int numerator;
