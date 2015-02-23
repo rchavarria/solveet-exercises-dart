@@ -14,9 +14,14 @@ void main() {
             expect(2, equals(gcd(2, 4)));
         });
 
-        test('is 1 because numerator and denominator are primes and have no factor in common', () {
+        test('is 1 because numerator and denominator are primes', () {
             expect(1, equals(gcd(3, 11)));
             expect(1, equals(gcd(11, 3)));
+        });
+
+        test('is a combination of common factors between numerator and denominator', () {
+            expect(6, equals(gcd(12, 42)));
+            expect(6, equals(gcd(42, 12)));
         });
 
     });
