@@ -40,15 +40,7 @@ void main() {
 
 }
 
-int gcd(numerator, denominator) {
-    while(denominator != 0) {
-        int t = denominator;
-        denominator = numerator % t;
-        numerator = t;
-    }
-
-    return numerator;
-}
+int gcd(n, d) => new Fraction(n, d).gcd();
 
 class Fraction {
     int numerator;
@@ -57,6 +49,16 @@ class Fraction {
     Fraction(this.numerator, this.denominator);
 
     void simplify() {
+    }
+
+    int gcd() {
+        while(denominator != 0) {
+            int t = denominator;
+            denominator = numerator % t;
+            numerator = t;
+        }
+
+        return numerator;
     }
 
 }
