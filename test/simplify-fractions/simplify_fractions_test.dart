@@ -1,4 +1,5 @@
 import 'package:unittest/unittest.dart';
+import '../../bin/simplify-fractions/simplify_fractions.dart';
 
 void main() {
 
@@ -43,26 +44,5 @@ void main() {
 void expectGCD(n, d, expected) {
     int gcd = new Fraction(n, d).gcd();
     expect(expected, equals(gcd));
-}
-
-class Fraction {
-    int numerator;
-    int denominator;
-
-    Fraction(this.numerator, this.denominator);
-
-    void simplify() {
-    }
-
-    int gcd() {
-        while(denominator != 0) {
-            int t = denominator;
-            denominator = numerator % t;
-            numerator = t;
-        }
-
-        return numerator;
-    }
-
 }
 
