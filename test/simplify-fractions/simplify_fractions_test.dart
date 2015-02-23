@@ -26,6 +26,18 @@ void main() {
 
     });
 
+    group('Fraction', () {
+
+        test('members can not be simplified', () {
+            var fraction = new Fraction(2, 1);
+            fraction.simplify();
+
+            expect(2, equals(fraction.numerator));
+            expect(1, equals(fraction.denominator));
+        });
+
+    });
+
 }
 
 int gcd(numerator, denominator) {
@@ -36,5 +48,16 @@ int gcd(numerator, denominator) {
     }
 
     return numerator;
+}
+
+class Fraction {
+    int numerator;
+    int denominator;
+
+    Fraction(this.numerator, this.denominator);
+
+    void simplify() {
+    }
+
 }
 
