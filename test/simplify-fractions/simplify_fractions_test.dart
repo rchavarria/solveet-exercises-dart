@@ -27,7 +27,7 @@ void main() {
 
     });
 
-    skip_group('Fraction', () {
+    group('Fraction', () {
 
         test('members can not be simplified', () {
             var fraction = new Fraction(2, 1);
