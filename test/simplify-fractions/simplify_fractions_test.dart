@@ -55,6 +55,14 @@ void main() {
                 expect(47, equals(fraction.denominator));
             });
 
+            test('reduces a fraction by several common factors', () {
+                var fraction = new Fraction(1848, 990); // common factor 2 * 3 * 11 = 66
+                fraction.simplify();
+
+                expect(28, equals(fraction.numerator));
+                expect(15, equals(fraction.denominator));
+            });
+
         });
 
     });
