@@ -14,13 +14,15 @@ class Fraction {
     }
 
     int gcd() {
-        while(denominator != 0) {
-            int t = denominator;
-            denominator = numerator % t;
-            numerator = t;
+        int n = numerator;
+        int d = denominator;
+        while(d != 0) {
+            int t = d;
+            d = n % t;
+            n = t;
         }
 
-        return numerator;
+        return n;
     }
 
 }
