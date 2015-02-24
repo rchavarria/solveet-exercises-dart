@@ -47,6 +47,14 @@ void main() {
                 expect(2, equals(fraction.denominator));
             });
 
+            test('does not reduce a fraction whose members are primes', () {
+                var fraction = new Fraction(13, 47);
+                fraction.simplify();
+
+                expect(13, equals(fraction.numerator));
+                expect(47, equals(fraction.denominator));
+            });
+
         });
 
     });
