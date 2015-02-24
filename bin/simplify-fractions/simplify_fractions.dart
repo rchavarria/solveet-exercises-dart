@@ -6,6 +6,11 @@ class Fraction {
     Fraction(this.numerator, this.denominator);
 
     void simplify() {
+        int factor = gcd();
+        print('factor: ${factor}, n: ${numerator}, d: ${denominator}');
+        numerator = (numerator / factor).toInt();
+        denominator = (denominator / factor).toInt();
+        print('factor: ${factor}, n: ${numerator}, d: ${denominator}');
     }
 
     int gcd() {

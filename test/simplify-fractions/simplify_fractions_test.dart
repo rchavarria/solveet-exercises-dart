@@ -27,7 +27,7 @@ void main() {
 
     });
 
-    group('Fraction', () {
+    skip_group('Fraction', () {
 
         test('members can not be simplified', () {
             var fraction = new Fraction(2, 1);
@@ -35,6 +35,14 @@ void main() {
 
             expect(2, equals(fraction.numerator));
             expect(1, equals(fraction.denominator));
+        });
+
+        test('members are simplified by a common factor', () {
+            var fraction = new Fraction(2, 4);
+            fraction.simplify();
+
+            expect(1, equals(fraction.numerator));
+            expect(2, equals(fraction.denominator));
         });
 
     });
