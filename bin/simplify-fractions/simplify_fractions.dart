@@ -6,14 +6,12 @@ class Fraction {
     Fraction(this.numerator, this.denominator);
 
     void simplify() {
-        int factor = gcd();
+        int factor = _gcd(numerator, denominator);
         numerator = (numerator / factor).toInt();
         denominator = (denominator / factor).toInt();
     }
 
-    int gcd() {
-        int n = numerator;
-        int d = denominator;
+    int _gcd(n, d) {
         while(d != 0) {
             int t = d;
             d = n % t;
