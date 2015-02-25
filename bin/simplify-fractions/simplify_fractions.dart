@@ -7,9 +7,9 @@ class Fraction {
 
     Fraction simplify() {
         int factor = _gcd(numerator, denominator);
-        numerator = (numerator / factor).toInt();
-        denominator = (denominator / factor).toInt();
-        return this;
+        int simplifiedNumerator = (numerator / factor).toInt();
+        int simplifiedDenominator = (denominator / factor).toInt();
+        return new Fraction(simplifiedNumerator, simplifiedDenominator);
     }
 
     int _gcd(n, d) {
