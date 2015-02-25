@@ -5,10 +5,11 @@ class Fraction {
 
     Fraction(this.numerator, this.denominator);
 
-    void simplify() {
+    Fraction simplify() {
         int factor = _gcd(numerator, denominator);
         numerator = (numerator / factor).toInt();
         denominator = (denominator / factor).toInt();
+        return this;
     }
 
     int _gcd(n, d) {
