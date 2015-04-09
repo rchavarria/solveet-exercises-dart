@@ -14,6 +14,12 @@ void main() {
             expect(true, equals(buildableByMultiplyingBy3(3)));
         });
 
+        test('can not build a number by multiplying 1 by 3 several times', () {
+            expect(false, equals(buildableByMultiplyingBy3(10)));
+            expect(false, equals(buildableByMultiplyingBy3(15)));
+            expect(false, equals(buildableByMultiplyingBy3(49)));
+        });
+
     });
 
 }
