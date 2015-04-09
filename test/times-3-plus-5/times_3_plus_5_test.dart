@@ -20,13 +20,29 @@ void main() {
             expect(false, equals(buildableByMultiplyingBy3(49)));
         });
 
+        test('can build a number by multiplying 1 by 3 several times', () {
+            expect(true, equals(buildableByMultiplyingBy3(9)));
+            expect(true, equals(buildableByMultiplyingBy3(27)));
+            expect(true, equals(buildableByMultiplyingBy3(81)));
+            expect(true, equals(buildableByMultiplyingBy3(243)));
+        });
+
     });
 
 }
 
 boolean buildableByMultiplyingBy3(int n) {
-    int divided = (n / 3).toInt();
+    if (n == 1) {
+        return true;
+    }
+
     int modulus = n % 3;
-    return divided == 1 && modulus == 0;
+    boolean buildable = modulus == 0;
+    if (buildable == false) {
+        return false;
+    }
+
+    int divided = (n / 3).toInt();
+    return buildableByMultiplyingBy3(divided);
 }
 
