@@ -36,10 +36,14 @@ boolean buildableByMultiplyingBy3(int n) {
         return true;
     }
 
-    if (n % 3 != 0) {
+    if (isNotDivisibleBy3(n)) {
         return false;
     }
 
     return buildableByMultiplyingBy3(n / 3);
+}
+
+boolean isNotDivisibleBy3(int n) {
+    return n % 3 != 0;
 }
 
