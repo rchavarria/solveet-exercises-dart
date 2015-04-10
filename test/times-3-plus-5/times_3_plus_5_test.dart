@@ -40,8 +40,6 @@ boolean buildableByMultiplyingBy3(int n) {
         return false;
     }
 
-    // TODO inline divided
-    int divided = (n / 3).toInt();
-    return buildableByMultiplyingBy3(divided);
+    return buildableByMultiplyingBy3(n / 3);
 }
 
