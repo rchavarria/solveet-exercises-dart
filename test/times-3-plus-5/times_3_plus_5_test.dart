@@ -36,12 +36,11 @@ boolean buildableByMultiplyingBy3(int n) {
         return true;
     }
 
-    int modulus = n % 3;
-    boolean buildable = modulus == 0;
-    if (buildable == false) {
+    if (n % 3 != 0) {
         return false;
     }
 
+    // TODO inline divided
     int divided = (n / 3).toInt();
     return buildableByMultiplyingBy3(divided);
 }
