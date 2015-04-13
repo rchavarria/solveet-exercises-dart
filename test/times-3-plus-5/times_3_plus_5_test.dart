@@ -37,6 +37,12 @@ void main() {
             expect(buildableByAdding5(6), equals(true));
         });
 
+        test('can not build a number by adding 5 to 1 several times', () {
+            expect(buildableByAdding5(12), equals(false));
+            expect(buildableByAdding5(15), equals(false));
+            expect(buildableByAdding5(236), equals(false));
+        });
+
     });
 
 }
