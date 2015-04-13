@@ -30,7 +30,6 @@ void main() {
         test('can not build a number by adding 5 to 1 only once', () {
             expect(buildableByAdding5(5), equals(false));
             expect(buildableByAdding5(7), equals(false));
-            expect(buildableByAdding5(11), equals(false)); // buildable by adding 5 to 1 twice
         });
 
         test('can build a number by adding 5 to 1 only once', () {
@@ -40,7 +39,13 @@ void main() {
         test('can not build a number by adding 5 to 1 several times', () {
             expect(buildableByAdding5(12), equals(false));
             expect(buildableByAdding5(15), equals(false));
-            expect(buildableByAdding5(236), equals(false));
+            expect(buildableByAdding5(237), equals(false));
+        });
+
+        test('can build a number by adding 5 to 1 several times', () {
+            expect(buildableByAdding5(11), equals(true));
+            expect(buildableByAdding5(21), equals(true));
+            expect(buildableByAdding5(111), equals(true));
         });
 
     });
@@ -64,6 +69,15 @@ boolean isNotDivisibleBy3(int n) {
 }
 
 boolean buildableByAdding5(int n) {
-    return n - 5 == 1;
+    if (n == 1) {
+        return true;
+    }
+
+    int substraction = n - 5;
+    if (substraction < 0) {
+        return false;
+    }
+
+    return buildableByAdding5(substraction);
 }
 
