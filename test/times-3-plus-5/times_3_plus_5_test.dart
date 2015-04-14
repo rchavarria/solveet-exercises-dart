@@ -58,6 +58,10 @@ void main() {
                 expect(times3plus5(3), equals(true));
             });
             
+            test('can not build a number by adding 5 to 1', () {
+                expect(times3plus5(7), equals(false));
+            });
+            
         });
 
     });
