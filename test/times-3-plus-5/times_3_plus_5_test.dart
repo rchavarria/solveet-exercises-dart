@@ -48,6 +48,14 @@ void main() {
             expect(buildableByAdding5(111), equals(true));
         });
 
+        group('#times3plus5', () {
+
+            test('can not build a number by multiplying by 3 once', () {
+                expect(times3plus5(4), equals(false));
+            });
+            
+        });
+
     });
 
 }
@@ -82,5 +90,9 @@ boolean buildableByAdding5(int n) {
 
 boolean canNotSubstract5(int n) {
     return (n - 5) < 0;
+}
+
+boolean times3plus5(int n) {
+    return false;
 }
 
