@@ -73,11 +73,14 @@ boolean buildableByAdding5(int n) {
         return true;
     }
 
-    int substraction = n - 5;
-    if (substraction < 0) {
+    if (canNotSubstract5(n)) {
         return false;
     }
 
-    return buildableByAdding5(substraction);
+    return buildableByAdding5(n - 5);
+}
+
+boolean canNotSubstract5(int n) {
+    return (n - 5) < 0;
 }
 
