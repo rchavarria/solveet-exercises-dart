@@ -62,6 +62,10 @@ void main() {
                 expect(times3plus5(7), equals(false));
             });
             
+            test('can build a number by adding 5 to 1, but not by multiplying 1 by 3', () {
+                expect(times3plus5(6), equals(true));
+            });
+            
         });
 
     });
@@ -101,6 +105,9 @@ boolean canNotSubstract5(int n) {
 }
 
 boolean times3plus5(int n) {
-    return !isNotDivisibleBy3(n);
+    if (!isNotDivisibleBy3(n)) {
+        return true;
+    }
+    return (n - 5) == 1;
 }
 
