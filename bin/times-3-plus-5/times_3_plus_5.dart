@@ -7,15 +7,15 @@ class Times3Plus5 {
         }
 
         boolean buildable = false;
-        if (!isNotDivisibleBy3(n)) {
+        if (isDivisibleBy3(n)) {
             buildable = isBuildable(n / 3);
         }
 
         return buildable;
     }
 
-    boolean isNotDivisibleBy3(int n) {
-        return n % 3 != 0;
+    boolean isDivisibleBy3(int n) {
+        return n % 3 == 0;
     }
 
 }
