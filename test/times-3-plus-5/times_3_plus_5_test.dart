@@ -142,11 +142,7 @@ boolean times3plus5(int n) {
         return builder.isBuildable(n);
     }
 
-    boolean buildable = false;
-    if (!isNotDivisibleBy3(n)) {
-        buildable = times3plus5(n / 3);
-    }
-
+    boolean buildable = builder.isBuildable(n);
     if (!buildable && !canNotSubstract5(n)) {
         buildable = times3plus5(n - 5);
     }
