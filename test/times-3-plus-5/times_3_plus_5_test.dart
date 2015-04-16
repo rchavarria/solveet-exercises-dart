@@ -136,7 +136,6 @@ boolean canNotSubstract5(int n) {
 }
 
 boolean times3plus5(int n) {
-    var builder = new Times3Plus5();
-    return builder.isBuildable(n);
+    return new Times3Plus5().isBuildable(n);
 }
 
