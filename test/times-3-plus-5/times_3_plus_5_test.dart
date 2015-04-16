@@ -142,7 +142,6 @@ boolean times3plus5(int n) {
         return builder.isBuildable(n);
     }
 
-    boolean buildable = builder.isBuildable(n);
-    return buildable;
+    return builder.isBuildable(n);
 }
 
