@@ -11,7 +11,7 @@ class Times3Plus5 {
             buildable = isBuildable(n / 3);
         }
 
-        if (!buildable && !canNotSubstract5(n)) {
+        if (!buildable && canSubstract5(n)) {
             buildable = isBuildable(n - 5);
         }
 
@@ -22,8 +22,8 @@ class Times3Plus5 {
         return n % 3 == 0;
     }
 
-    boolean canNotSubstract5(int n) {
-        return (n - 5) < 1;
+    boolean canSubstract5(int n) {
+        return (n - 5) >= 1;
     }
 
 }
