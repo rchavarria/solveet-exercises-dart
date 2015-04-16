@@ -1,4 +1,5 @@
 import 'package:unittest/unittest.dart';
+import '../../bin/times-3-plus-5/times_3_plus_5.dart';
 
 void main() {
 
@@ -135,8 +136,10 @@ boolean canNotSubstract5(int n) {
 }
 
 boolean times3plus5(int n) {
+    var builder = new Times3Plus5();
+
     if (n == 1) {
-        return true;
+        return builder.isBuildable(n);
     }
 
     boolean buildable = false;
