@@ -70,8 +70,17 @@ void main() {
                 expect(times3plus5(18), equals(true));
             });
             
-            test('can build a number first by multiplying 1 by 3, them adding 5', () {
+            test('can build a number first by multiplying 1 by 3, then adding 5', () {
                 expect(times3plus5(8), equals(true));
+            });
+            
+            test('examples of numbers that can be built combining 3 and 5', () {
+                expect(times3plus5(13), equals(true));
+                expect(times3plus5(14), equals(true));
+                expect(times3plus5(23), equals(true));
+                expect(times3plus5(24), equals(true));
+                expect(times3plus5(33), equals(true));
+                expect(times3plus5(54), equals(true));
             });
             
         });
@@ -122,7 +131,7 @@ boolean times3plus5(int n) {
         buildable = times3plus5(n / 3);
     }
 
-    if (!canNotSubstract5(n)) {
+    if (!buildable && !canNotSubstract5(n)) {
         buildable = times3plus5(n - 5);
     }
 
