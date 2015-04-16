@@ -74,9 +74,22 @@ void main() {
                 expect(times3plus5(8), equals(true));
             });
             
+            test('examples of numbers that can not be built combining 3 and 5', () {
+                expect(times3plus5(2), equals(false));
+                expect(times3plus5(4), equals(false));
+                expect(times3plus5(5), equals(false));
+                expect(times3plus5(7), equals(false));
+                expect(times3plus5(10), equals(false));
+                expect(times3plus5(12), equals(false));
+                expect(times3plus5(15), equals(false));
+                expect(times3plus5(17), equals(false));
+                expect(times3plus5(20), equals(false));
+            });
+            
             test('examples of numbers that can be built combining 3 and 5', () {
                 expect(times3plus5(13), equals(true));
                 expect(times3plus5(14), equals(true));
+                expect(times3plus5(19), equals(true));
                 expect(times3plus5(23), equals(true));
                 expect(times3plus5(24), equals(true));
                 expect(times3plus5(33), equals(true));
