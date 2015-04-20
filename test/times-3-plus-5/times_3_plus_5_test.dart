@@ -5,6 +5,10 @@ void main() {
 
     group('Times 3 - Plus 5', () {
 
+        test('can not build zero', () {
+            expect(times3plus5(0), equals(false));
+        });
+
         test('can not build a number by multiplying by 3 once', () {
             expect(times3plus5(4), equals(false));
         });
