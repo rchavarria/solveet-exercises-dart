@@ -22,6 +22,9 @@ class Times3Plus5 {
 
         if (!buildable && _canSubstract5(n)) {
             buildable = isBuildable(n - 5);
+            if (buildable) {
+                steps.add('+5');
+            }
         }
 
         return buildable;
