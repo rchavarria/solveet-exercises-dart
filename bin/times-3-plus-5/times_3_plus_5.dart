@@ -1,5 +1,6 @@
 
 class Times3Plus5 {
+    List steps = [];
 
     boolean isBuildable(int n) {
         if (n < 1) {
