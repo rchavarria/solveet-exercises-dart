@@ -15,6 +15,9 @@ class Times3Plus5 {
         boolean buildable = false;
         if (_isDivisibleBy3(n)) {
             buildable = isBuildable(n / 3);
+            if (buildable) {
+                steps.add('*3');
+            }
         }
 
         if (!buildable && _canSubstract5(n)) {
