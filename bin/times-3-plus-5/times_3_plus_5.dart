@@ -8,6 +8,7 @@ class Times3Plus5 {
         }
 
         if (n == 1) {
+            steps.add('1');
             return true;
         }
 
