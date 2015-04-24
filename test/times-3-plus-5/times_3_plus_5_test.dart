@@ -1,5 +1,6 @@
 import 'package:unittest/unittest.dart';
 import '../../bin/times-3-plus-5/times_3_plus_5.dart';
+import '../../bin/times-3-plus-5/identity_builder.dart';
 
 void main() {
 
@@ -55,6 +56,15 @@ void main() {
             expect(times3plus5(54), equals(true));
         });
             
+    });
+
+    group('Identity builder', () {
+
+        test('considers number 1 as buildable', () {
+            var builder = new IdentityBuilder();
+            expect(builder.isBuildable(1), equals(true));
+        });
+
     });
 
 }
