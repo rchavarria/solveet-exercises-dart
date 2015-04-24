@@ -65,6 +65,15 @@ void main() {
             expect(builder.isBuildable(1), equals(true));
         });
 
+        test('Any other number is not buildable', () {
+            var builder = new IdentityBuilder();
+            expect(builder.isBuildable(2), equals(false));
+            expect(builder.isBuildable(3), equals(false));
+            expect(builder.isBuildable(6), equals(false));
+            expect(builder.isBuildable(21), equals(false));
+            expect(builder.isBuildable(1234), equals(false));
+        });
+
     });
 
 }

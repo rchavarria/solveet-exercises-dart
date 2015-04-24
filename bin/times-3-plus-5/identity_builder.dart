@@ -1,6 +1,7 @@
 class IdentityBuilder {
     
     boolean isBuildable(int n) {
-        return true;
+        return n == 1;
     }
+
 }
