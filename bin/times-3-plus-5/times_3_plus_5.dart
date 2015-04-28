@@ -1,6 +1,13 @@
+import './times3_builder.dart';
 
 class Times3Plus5 {
-    List steps = [];
+    List steps;
+    Times3Builder times3;
+
+    Times3Plus5() {
+        steps = [];
+        times3 = new Times3Builder(this);
+    }
 
     boolean isBuildable(int n) {
         if (n < 1) {
@@ -12,14 +19,7 @@ class Times3Plus5 {
             return true;
         }
 
-        boolean buildable = false;
-        if (_isDivisibleBy3(n)) {
-            buildable = isBuildable(n / 3);
-            if (buildable) {
-                steps.add('*3');
-            }
-        }
-
+        boolean buildable = times3.isBuildable(n);
         if (!buildable && _canSubstract5(n)) {
             buildable = isBuildable(n - 5);
             if (buildable) {
