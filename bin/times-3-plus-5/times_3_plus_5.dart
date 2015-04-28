@@ -31,13 +31,5 @@ class Times3Plus5 {
         return buildable;
     }
 
-    boolean _isDivisibleBy3(int n) {
-        return n % 3 == 0;
-    }
-
-    boolean _canSubstract5(int n) {
-        return (n - 5) >= 1;
-    }
-
 }
 
