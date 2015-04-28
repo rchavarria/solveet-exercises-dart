@@ -87,6 +87,11 @@ void main() {
             expect(builder.isBuildable(122), equals(false));
         });
 
+        test('considers numbers divisible by 3 as buildable', () {
+            var builder = new Times3Builder();
+            expect(builder.isBuildable(3), equals(true));
+        });
+
     });
 
 }
