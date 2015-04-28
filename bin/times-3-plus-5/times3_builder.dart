@@ -5,10 +5,14 @@ class Times3Builder {
     Times3Builder(this.delegate); 
     
     boolean isBuildable(int n) {
-        if ((n % 3) == 0) {
+        if (_isDivisible(n)) {
             return this.delegate.isBuildable(n / 3);
         }
         return false;
+    }
+
+    boolean _isDivisible(n) {
+        return n % 3 == 0;
     }
 
 }
