@@ -1,4 +1,6 @@
 import 'package:unittest/unittest.dart';
+import 'package:dartmocks/dartmocks.dart';
+
 import '../../bin/times-3-plus-5/times_3_plus_5.dart';
 import '../../bin/times-3-plus-5/identity_builder.dart';
 import '../../bin/times-3-plus-5/times3_builder.dart';
@@ -80,16 +82,29 @@ void main() {
     group('Times 3 builder', () {
 
         test('considers numbers not divisible by 3 as not buildable', () {
-            var builder = new Times3Builder();
+            var builder = new Times3Builder(null);
             expect(builder.isBuildable(2), equals(false));
             expect(builder.isBuildable(5), equals(false));
             expect(builder.isBuildable(8), equals(false));
             expect(builder.isBuildable(122), equals(false));
         });
 
-        test('considers numbers divisible by 3 as buildable', () {
-            var builder = new Times3Builder();
+        test('delegates the decision to the delegate if the number is divisible by 3', () {
+            var delegateBuilder = stub({'isBuildable': true});
+            var builder = new Times3Builder(delegateBuilder);
             expect(builder.isBuildable(3), equals(true));
+        });
+
+        test('calls the delegate with the number divided by 3 when is buildable', () {
+            var n = 6;
+            var delegate = mock()
+                            ..shouldReceive('isBuildable').args(n / 3);
+            var builder = new Times3Builder(delegate);
+
+            // test
+            builder.isBuildable(n);
+
+            delegate.verify();
         });
 
     });
