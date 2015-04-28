@@ -4,6 +4,7 @@ import 'package:dartmocks/dartmocks.dart';
 import '../../bin/times-3-plus-5/times_3_plus_5.dart';
 import '../../bin/times-3-plus-5/identity_builder.dart';
 import '../../bin/times-3-plus-5/times3_builder.dart';
+import '../../bin/times-3-plus-5/plus5_builder.dart';
 
 void main() {
 
@@ -100,6 +101,36 @@ void main() {
             var delegate = mock()
                             ..shouldReceive('isBuildable').args(n / 3);
             var builder = new Times3Builder(delegate);
+
+            // test
+            builder.isBuildable(n);
+
+            delegate.verify();
+        });
+
+    });
+
+    group('Plus 5 builder', () {
+
+        test('considers numbers lower than 6 as not buildable', () {
+            var builder = new Plus5Builder(null);
+            expect(builder.isBuildable(2), equals(false));
+            expect(builder.isBuildable(3), equals(false));
+            expect(builder.isBuildable(4), equals(false));
+            expect(builder.isBuildable(5), equals(false));
+        });
+
+        test('delegates the decision to the delegate if the number is greater than 5', () {
+            var delegateBuilder = stub({'isBuildable': true});
+            var builder = new Plus5Builder(delegateBuilder);
+            expect(builder.isBuildable(7), equals(true));
+        });
+
+        test('calls the delegate with 5 substracted to the number when is buildable', () {
+            var n = 11;
+            var delegate = mock()
+                            ..shouldReceive('isBuildable').args(n - 5);
+            var builder = new Plus5Builder(delegate);
 
             // test
             builder.isBuildable(n);
