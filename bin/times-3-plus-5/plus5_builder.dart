@@ -5,10 +5,14 @@ class Plus5Builder {
     Plus5Builder(this.delegate); 
     
     boolean isBuildable(int n) {
-        if (n - 5 >= 1) {
+        if (_isSubstractable(n)) {
             return this.delegate.isBuildable(n - 5);
         }
         return false;
+    }
+
+    boolean _isSubstractable(n) {
+        return n - 5 >= 1;
     }
 
 }
