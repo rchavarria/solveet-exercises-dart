@@ -1,6 +1,7 @@
 import 'package:unittest/unittest.dart';
 import '../../bin/times-3-plus-5/times_3_plus_5.dart';
 import '../../bin/times-3-plus-5/identity_builder.dart';
+import '../../bin/times-3-plus-5/times3_builder.dart';
 
 void main() {
 
@@ -65,13 +66,25 @@ void main() {
             expect(builder.isBuildable(1), equals(true));
         });
 
-        test('Any other number is not buildable', () {
+        test('considers any other number as not buildable', () {
             var builder = new IdentityBuilder();
             expect(builder.isBuildable(2), equals(false));
             expect(builder.isBuildable(3), equals(false));
             expect(builder.isBuildable(6), equals(false));
             expect(builder.isBuildable(21), equals(false));
             expect(builder.isBuildable(1234), equals(false));
+        });
+
+    });
+
+    group('Times 3 builder', () {
+
+        test('considers numbers not divisible by 3 as not buildable', () {
+            var builder = new Times3Builder();
+            expect(builder.isBuildable(2), equals(false));
+            expect(builder.isBuildable(5), equals(false));
+            expect(builder.isBuildable(8), equals(false));
+            expect(builder.isBuildable(122), equals(false));
         });
 
     });
