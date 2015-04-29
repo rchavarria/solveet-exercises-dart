@@ -20,13 +20,13 @@ class Times3Plus5 {
             return false;
         }
 
-        boolean buildable = identity.isBuildable(n);
-        if (!buildable) {
-            buildable = times3.isBuildable(n);
-        }
-        if (!buildable) {
-            buildable = plus5.isBuildable(n);
-        }
+        var builders = [identity, times3, plus5];
+        boolean buildable = false;
+        builders.forEach((builder) {
+            if (!buildable) {
+                buildable = builder.isBuildable(n);
+            }
+        });
 
         return buildable;
     }
