@@ -18,9 +18,7 @@ class Times3Builder implements Builder {
         return this.delegate.isBuildable(n / 3);
     }
 
-    boolean _isNotDivisible(n) {
-        return n % 3 != 0;
-    }
+    boolean _isNotDivisible(n) => n % 3 != 0;
 
     String getStep() => '*3';
 

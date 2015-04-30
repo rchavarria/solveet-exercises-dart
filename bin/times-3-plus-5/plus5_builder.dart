@@ -13,9 +13,7 @@ class Plus5Builder implements Builder {
         return false;
     }
 
-    boolean _isSubstractable(n) {
-        return n - 5 >= 1;
-    }
+    boolean _isSubstractable(n) => n - 5 >= 1;
 
     String getStep() => '+5';
 
