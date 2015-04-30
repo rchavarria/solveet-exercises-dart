@@ -82,6 +82,11 @@ void main() {
 
     group('Times 3 builder', () {
 
+        test('considers zero as not buildable', () {
+            var builder = new Times3Builder(null);
+            expect(builder.isBuildable(0), equals(false));
+        });
+
         test('considers numbers not divisible by 3 as not buildable', () {
             var builder = new Times3Builder(null);
             expect(builder.isBuildable(2), equals(false));

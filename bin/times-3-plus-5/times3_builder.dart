@@ -12,7 +12,7 @@ class Times3Builder {
     }
 
     boolean _isDivisible(n) {
-        return n % 3 == 0;
+        return n != 0 && n % 3 == 0;
     }
 
 }
