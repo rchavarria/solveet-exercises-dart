@@ -1,4 +1,6 @@
-class Plus5Builder {
+import './builder.dart';
+
+class Plus5Builder implements Builder {
 
     var delegate;
 

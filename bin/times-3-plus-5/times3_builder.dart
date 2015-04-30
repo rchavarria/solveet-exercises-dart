@@ -1,4 +1,6 @@
-class Times3Builder {
+import './builder.dart';
+
+class Times3Builder implements Builder {
 
     var delegate;
 
