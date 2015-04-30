@@ -4,8 +4,8 @@ import './times3_builder.dart';
 import './plus5_builder.dart';
 
 class Times3Plus5 implements Builder {
-    List steps;
-    List builders;
+    List<String> steps;
+    List<Builder> builders;
 
     Times3Plus5() {
         steps = [];
