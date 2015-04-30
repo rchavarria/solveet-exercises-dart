@@ -17,4 +17,6 @@ class Plus5Builder implements Builder {
         return n - 5 >= 1;
     }
 
+    String getStep() => '+5';
+
 }

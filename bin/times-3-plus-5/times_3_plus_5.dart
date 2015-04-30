@@ -21,11 +21,16 @@ class Times3Plus5 implements Builder {
         builders.forEach((builder) {
             if (!buildable) {
                 buildable = builder.isBuildable(n);
+                if (buildable) {
+                    steps.add(builder.getStep());
+                }
             }
         });
 
         return buildable;
     }
+    
+    String getStep() => '';
 
 }
 

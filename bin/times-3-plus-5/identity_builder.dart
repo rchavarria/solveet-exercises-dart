@@ -6,4 +6,6 @@ class IdentityBuilder implements Builder {
         return n == 1;
     }
 
+    String getStep() => '1';
+
 }

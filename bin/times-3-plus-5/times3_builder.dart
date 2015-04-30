@@ -22,4 +22,6 @@ class Times3Builder implements Builder {
         return n % 3 != 0;
     }
 
+    String getStep() => '*3';
+
 }
